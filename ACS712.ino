@@ -1,22 +1,3 @@
-/*
-  EFY PC OsciloScope
-  Read A0 and send to UART at 115200.  
-
-  Read the voltages as fast as possible and send to serial port.
-  115200 baud pushes each byte at around 85us. 
-  But the default ADC config by Arduino gives ADC at 116us. so here ADC config with additional lines of code and get samples faster than 85us.
-  
-  Data throughput is decided by the serial baud rate
-  @ 115.2k baud we can get 12kSps
-   
-  Created on 18th Oct 2016
-  by Balaji ramalingam, Robert Bosch, Banagalore
-  Balajir@in.bosch.com
- 
- */
-
-// These constants won't change.  They're used to give names
-// to the pins used:
 const int analogInPin1 = A0;  // Analog input pin that the potentiometer is attached to
 //static int ctr,flag_tog;
 //static unsigned char adcval;
@@ -98,7 +79,7 @@ void loop()
   //else
   //Serial.write(adcval);
   /*
-  // Following code to generate ref signal at pin 13 @ 50HZ. You can connect A0 to see the waveform in PCScope.exe
+  // Following code to generate ref signal at pin 13 @ 50HZ. You can connect A0 to see the waveform
   ctr++;
   if(ctr>117) //117=10.03ms
   {
